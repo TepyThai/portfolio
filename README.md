@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://tx2.surge.sh">
+  <a href="https://tx2.netlify.com/">
     <img alt="logo" src="src/images/icon.png" width="60" />
   </a>
 </p>
@@ -7,7 +7,7 @@
   Tepy Thai's personal portfolio
 </h1>
 
-This is my personal [portfolio site's](https://tx2.surge.sh) repo.
+This is my personal [portfolio site's](https://tx2.netlify.com/) repo.
 
 > _This site is built with React+Gatsby, bootstraped with [official gatsby default starter](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-default/)._
 
