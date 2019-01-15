@@ -29,12 +29,12 @@ const GlobalStyle = createGlobalStyle`
 `
 const PosedUL = posed.ul({
   open: {
-    y: '0px',
+    y: '0%',
     delayChildren: 70,
     staggerChildren: 50,
   },
-  close: {
-    y: '-100%',
+  closed: {
+    y: '-50%',
     delay: 300,
   },
 })
@@ -161,6 +161,7 @@ class Header extends React.Component {
                 {!isBlog && (
                   <React.Fragment>
                     <ButtonScroll
+                      as="li"
                       block={true}
                       scrollToName="scroll-to-projects"
                       closeMenu={this.closeMenu}
@@ -170,6 +171,7 @@ class Header extends React.Component {
 
                     <ButtonScroll
                       block={true}
+                      as="li"
                       scrollToName="scroll-to-about"
                       closeMenu={this.closeMenu}
                     >
