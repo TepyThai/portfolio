@@ -5,8 +5,17 @@ const Caps = styled(Text)`
   text-transform: ${p => (p.upperCase ? 'uppercase' : 'none')};
   display: ${p => (p.inline ? 'inline-block' : 'inherit')};
   z-index: inherit;
-  /* line-height: 30px; */
-  /* border-bottom: 1px solid white; */
+  background: ${p =>
+    p.importantText
+      ? `linear-gradient(to right,${p.theme.colors.yellow},${
+          p.theme.colors.red
+        })`
+      : 'none'};
+  background-clip: ${p => (p.importantText ? 'text' : '')};
+  /* box-decoration-break: ${p => (p.importantText ? 'clone' : '')}; */
+  -webkit-text-fill-color: ${p => (p.importantText ? 'transparent' : '')};
+  -webkit-background-clip: ${p => (p.importantText ? 'text' : '')};
+    
 `
 Caps.defaultProps = {
   fontSize: 4,

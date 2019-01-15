@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    position: ${p => (p.menuOpen ? 'fixed' : 'inherit')};
+    /* position: ${p => (p.menuOpen ? 'fixed' : 'inherit')}; */
   }
   *:focus{
     outline: 0;
@@ -74,7 +74,6 @@ const MenuWrapper = styled(Button)`
   cursor: pointer;
   padding-right: 0;
   background-color: transparent;
-
   @media (min-width: 40em) {
     display: none;
   }
@@ -189,6 +188,7 @@ class Header extends React.Component {
                         block={true}
                         scrollToName="scroll-to-projects"
                         closeMenu={this.closeMenu}
+                        isfullwidth
                       >
                         Projects
                       </ButtonScroll>

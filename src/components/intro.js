@@ -13,65 +13,7 @@ import Container from '../base-components/Container'
 import ButtonScroll from '../base-components/ButtonScroll'
 import SocialLinks from './social-links'
 
-const BgCard = styled(Card)`
-  :before {
-    content: '';
-    width: 100%;
-    height: 98%;
-    display: block;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.2)
-    );
-    z-index: -1;
-  }
-`
-
-const introImageQuery = graphql`
-  query {
-    profileImage: file(relativePath: { eq: "profile.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 200) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    headerBgImage: file(relativePath: { eq: "header-bg.jpg" }) {
-      childImageSharp {
-        fluid(maxHeight: 663) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    githubImage: file(relativePath: { eq: "github.png" }) {
-      childImageSharp {
-        fluid(maxHeight: 32) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    twitterImage: file(relativePath: { eq: "twitter.png" }) {
-      childImageSharp {
-        fluid(maxHeight: 32) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    wantedlyImage: file(relativePath: { eq: "wantedly.png" }) {
-      childImageSharp {
-        fluid(maxHeight: 32) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
-
-const Intro = ({ siteTitle, menuTitle }) => (
+const Intro = ({ introTitle }) => (
   <StaticQuery
     query={introImageQuery}
     render={data => (
@@ -113,20 +55,47 @@ const Intro = ({ siteTitle, menuTitle }) => (
                 <Flex flexDirection="column" justifyContent="center">
                   <Caps
                     fontWeight="bold"
-                    fontSize="5"
+                    fontSize="3"
                     mb={4}
                     letterSpacing="0.1rem"
                     lineHeight={['40px', '30px']}
+                    inline
                   >
-                    {siteTitle}
+                    {`Hi! I'm `}
+                    <Caps
+                      fontWeight="bold"
+                      fontSize="5"
+                      letterSpacing="0.1rem"
+                      lineHeight={['40px', '30px']}
+                      importantText
+                      inline
+                    >
+                      {introTitle}
+                    </Caps>
                   </Caps>
-                  <SmCaps p="0">
-                    <h3> Web Developer</h3>
+                  <SmCaps
+                    p="0"
+                    importantText
+                    fontSize={4}
+                    fontWeight="bold"
+                    letterSpacing="0.1rem"
+                    lineHeight={['40px', '30px']}
+                    inline
+                  >
+                    Web Developer
                     <ImageCenter src={ReactLogo} />
                     <ImageCenter src={GraphqlLogo} />
                   </SmCaps>
-                  <SmCaps p="0">
-                    Build Elegant Looking + Swiftly Functional Products
+                  <SmCaps p="0" inline>
+                    {`Build `}
+                    <SmCaps importantText p={0} inline>
+                      Elegant Looking
+                    </SmCaps>
+                    {` + `}
+                    <SmCaps importantText p={0} inline>
+                      Swiftly Functional
+                    </SmCaps>
+                    {` Products `}
                   </SmCaps>
                   <SmCaps p="0" inline>
                     From{' '}
@@ -200,5 +169,63 @@ Intro.defaultProps = {
   siteTitle: '',
   menuTitle: '',
 }
+
+const BgCard = styled(Card)`
+  :before {
+    content: '';
+    width: 100%;
+    height: 98%;
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.2)
+    );
+    z-index: -1;
+  }
+`
+
+const introImageQuery = graphql`
+  query {
+    profileImage: file(relativePath: { eq: "profile.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    headerBgImage: file(relativePath: { eq: "header-bg.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 663) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    githubImage: file(relativePath: { eq: "github.png" }) {
+      childImageSharp {
+        fluid(maxHeight: 32) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    twitterImage: file(relativePath: { eq: "twitter.png" }) {
+      childImageSharp {
+        fluid(maxHeight: 32) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    wantedlyImage: file(relativePath: { eq: "wantedly.png" }) {
+      childImageSharp {
+        fluid(maxHeight: 32) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default Intro

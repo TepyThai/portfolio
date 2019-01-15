@@ -13,7 +13,7 @@ const IndexPage = () => (
     <React.Fragment>
       <Helmet title={`Tepy Thai`} />
       <Header siteTitle="Tepy Thai" />
-      <Intro siteTitle="Hi! I'm Tepy" />
+      <Intro introTitle="Tepy" />
       <Container>
         <Projects />
         <About />
