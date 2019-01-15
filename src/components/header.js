@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import styled, { createGlobalStyle } from 'styled-components'
 import { Box, Flex, Button } from 'rebass'
-import { createGlobalStyle } from 'styled-components'
+import posed from 'react-pose'
+
 import Toolbar from '../base-components/Toolbar'
 import Caps from '../base-components/Caps'
 import Container from '../base-components/Container'
-import { StaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
-import posed from 'react-pose'
-
 import ButtonScroll from '../base-components/ButtonScroll'
 import NavLink from '../base-components/NavLink'
 import SocialLinks from './social-links'
@@ -22,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    position: ${p => (p.menuOpen ? 'fixed' : 'inherit')};
   }
   *:focus{
     outline: 0;
@@ -35,7 +35,9 @@ const PosedUL = posed.ul({
   },
   closed: {
     y: '-50%',
-    delay: 300,
+    transition: {
+      duration: 2000,
+    },
   },
 })
 
@@ -45,7 +47,6 @@ const PosedUL = posed.ul({
 // })
 const StyledPosedUL = styled(PosedUL)`
   display: ${p => (p.open ? 'block' : 'none')};
-
   @media (min-width: 40em) {
     display: none;
   }
@@ -78,6 +79,20 @@ const MenuWrapper = styled(Button)`
     display: none;
   }
 `
+
+const Backdrop = styled.div`
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: ${p => (p.menuOpen ? 'block' : 'none')};
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+`
+
 const menuQuery = graphql`
   query {
     menuIconWhite: file(relativePath: { eq: "menu-white.png" }) {
@@ -106,97 +121,108 @@ class Header extends React.Component {
   closeMenu = () => this.setState({ isOpen: false })
   render() {
     const { isBlog } = this.props
-
+    const { isOpen } = this.state
     return (
       <StaticQuery
         query={menuQuery}
         render={data => (
-          <Toolbar boxShadow py={1} m={0}>
-            <Container width={[1]} px={2}>
-              <Toolbar width={[1]} className="asSubToolbar">
-                <NavLink to="/" astitle="true">
-                  <Caps upperCase fontWeight="bold" fontSize={3}>
-                    {this.props.siteTitle}
-                  </Caps>
-                </NavLink>
+          <React.Fragment>
+            <Toolbar boxShadow py={1} m={0}>
+              <Container width={[1]} px={2}>
+                <Toolbar width={[1]} className="asSubToolbar">
+                  <NavLink to="/" astitle="true">
+                    <Caps upperCase fontWeight="bold" fontSize={3}>
+                      {this.props.siteTitle}
+                    </Caps>
+                  </NavLink>
 
-                <Box mx="auto" />
-                <NavLinkWrapper flexDirection="row" p={0} m={0} isBlog={isBlog}>
+                  <Box mx="auto" />
+                  <NavLinkWrapper
+                    flexDirection="row"
+                    p={0}
+                    m={0}
+                    isBlog={isBlog}
+                  >
+                    {!isBlog && (
+                      <>
+                        <ButtonScroll navtype scrollToName="scroll-to-projects">
+                          Projects
+                        </ButtonScroll>
+                        <ButtonScroll navtype scrollToName="scroll-to-about">
+                          About Me
+                        </ButtonScroll>
+                      </>
+                    )}
+                    {isBlog && <SocialLinks />}
+                    <ButtonScroll
+                      navtype
+                      as="a"
+                      href="mailto:thaitepy@gmail.com"
+                      rel="noopener noreferrer"
+                      className="last"
+                      target="_blank"
+                    >
+                      Contact Me
+                    </ButtonScroll>
+                  </NavLinkWrapper>
+                  <MenuWrapper onClick={this.toggle}>
+                    {isOpen ? (
+                      <Img
+                        title="close menu"
+                        alt="close menu"
+                        fixed={data.menuIconCloseWhite.childImageSharp.fixed}
+                      />
+                    ) : (
+                      <Img
+                        title="open menu"
+                        alt="open menu"
+                        fixed={data.menuIconWhite.childImageSharp.fixed}
+                      />
+                    )}
+                  </MenuWrapper>
+                </Toolbar>
+                <StyledPosedUL pose={isOpen ? 'open' : 'closed'} open={isOpen}>
                   {!isBlog && (
-                    <>
-                      <ButtonScroll navtype scrollToName="scroll-to-projects">
+                    <React.Fragment>
+                      <ButtonScroll
+                        as="li"
+                        block={true}
+                        scrollToName="scroll-to-projects"
+                        closeMenu={this.closeMenu}
+                      >
                         Projects
                       </ButtonScroll>
-                      <ButtonScroll navtype scrollToName="scroll-to-about">
+
+                      <ButtonScroll
+                        block={true}
+                        as="li"
+                        scrollToName="scroll-to-about"
+                        closeMenu={this.closeMenu}
+                      >
                         About Me
                       </ButtonScroll>
-                    </>
+                    </React.Fragment>
                   )}
                   {isBlog && <SocialLinks />}
+
                   <ButtonScroll
-                    navtype
+                    block={true}
                     as="a"
                     href="mailto:thaitepy@gmail.com"
                     rel="noopener noreferrer"
-                    className="last"
                     target="_blank"
+                    className="last"
+                    closeMenu={this.closeMenu}
                   >
                     Contact Me
                   </ButtonScroll>
-                </NavLinkWrapper>
-                <MenuWrapper onClick={this.toggle}>
-                  {this.state.isOpen ? (
-                    <Img
-                      fixed={data.menuIconCloseWhite.childImageSharp.fixed}
-                    />
-                  ) : (
-                    <Img fixed={data.menuIconWhite.childImageSharp.fixed} />
-                  )}
-                </MenuWrapper>
-              </Toolbar>
-              <StyledPosedUL
-                pose={this.state.isOpen ? 'open' : 'closed'}
-                open={this.state.isOpen}
-              >
-                {!isBlog && (
-                  <React.Fragment>
-                    <ButtonScroll
-                      as="li"
-                      block={true}
-                      scrollToName="scroll-to-projects"
-                      closeMenu={this.closeMenu}
-                    >
-                      Projects
-                    </ButtonScroll>
+                </StyledPosedUL>
+              </Container>
 
-                    <ButtonScroll
-                      block={true}
-                      as="li"
-                      scrollToName="scroll-to-about"
-                      closeMenu={this.closeMenu}
-                    >
-                      About Me
-                    </ButtonScroll>
-                  </React.Fragment>
-                )}
-                {isBlog && <SocialLinks />}
-
-                <ButtonScroll
-                  block={true}
-                  as="a"
-                  href="mailto:thaitepy@gmail.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="last"
-                  closeMenu={this.closeMenu}
-                >
-                  Contact Me
-                </ButtonScroll>
-              </StyledPosedUL>
-            </Container>
-
-            <GlobalStyle />
-          </Toolbar>
+              <GlobalStyle menuOpen={isOpen} />
+            </Toolbar>
+            <Backdrop menuOpen={isOpen} onClick={this.closeMenu} />
+          </React.Fragment>
         )}
       />
     )
