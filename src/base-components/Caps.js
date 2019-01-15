@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Caps = styled(Text)`
   text-transform: ${p => (p.upperCase ? 'uppercase' : 'none')};
-  display: ${p => (p.inline ? 'inline-block' : 'inherit')};
+  display: ${p => (p.inline ? 'inline' : 'inherit')};
   z-index: inherit;
   background: ${p =>
     p.importantText

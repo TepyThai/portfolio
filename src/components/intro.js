@@ -3,14 +3,13 @@ import React from 'react'
 import Caps from '../base-components/Caps'
 import SmCaps from '../base-components/SmCaps'
 import { Flex, Card } from 'rebass'
-import { ButtonLinkWrapper } from '../base-components/ButtonLink'
+import ButtonLink from '../base-components/ButtonLink'
 import ImageCenter from '../base-components/ImageCenter'
 import { ReactLogo, GraphqlLogo } from '../images/logos'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import Container from '../base-components/Container'
-import ButtonScroll from '../base-components/ButtonScroll'
 import SocialLinks from './social-links'
 
 const Intro = ({ introTitle }) => (
@@ -77,6 +76,7 @@ const Intro = ({ introTitle }) => (
                     p="0"
                     importantText
                     fontSize={4}
+                    mb={1}
                     fontWeight="bold"
                     letterSpacing="0.1rem"
                     lineHeight={['40px', '30px']}
@@ -88,11 +88,11 @@ const Intro = ({ introTitle }) => (
                   </SmCaps>
                   <SmCaps p="0" inline>
                     {`Build `}
-                    <SmCaps importantText p={0} inline>
+                    <SmCaps importantText p={0} fontSize={2} inline underline>
                       Elegant Looking
                     </SmCaps>
                     {` + `}
-                    <SmCaps importantText p={0} inline>
+                    <SmCaps importantText p={0} fontSize={2} inline underline>
                       Swiftly Functional
                     </SmCaps>
                     {` Products `}
@@ -130,17 +130,15 @@ const Intro = ({ introTitle }) => (
                   />
                 </Card>
               </Flex>
-              <ButtonLinkWrapper>
-                <ButtonScroll
-                  block={true}
-                  as="a"
-                  href="mailto:thaitepy@gmail.com"
-                  target="_blank"
-                  isfullWidth={true}
-                >
-                  Contact Me
-                </ButtonScroll>
-              </ButtonLinkWrapper>
+
+              <ButtonLink
+                block={true}
+                isMailLink
+                href="mailto:thaitepy@gmail.com"
+                isfullwidth={true}
+              >
+                Contact Me
+              </ButtonLink>
             </Flex>
 
             <Flex

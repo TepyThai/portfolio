@@ -12,6 +12,7 @@ import Container from '../base-components/Container'
 import ButtonScroll from '../base-components/ButtonScroll'
 import NavLink from '../base-components/NavLink'
 import SocialLinks from './social-links'
+import StyledButton from '../base-components/StyledButton'
 
 const GlobalStyle = createGlobalStyle`
   root{
@@ -129,11 +130,19 @@ class Header extends React.Component {
             <Toolbar boxShadow py={1} m={0}>
               <Container width={[1]} px={2}>
                 <Toolbar width={[1]} className="asSubToolbar">
-                  <NavLink to="/" astitle="true">
-                    <Caps upperCase fontWeight="bold" fontSize={3}>
-                      {this.props.siteTitle}
-                    </Caps>
-                  </NavLink>
+                  <StyledButton style={{ padding: 0 }}>
+                    <NavLink to="/" astitle="true" className="main-title">
+                      <Caps
+                        upperCase
+                        fontWeight="bold"
+                        fontSize={3}
+                        inline
+                        p={0}
+                      >
+                        {this.props.siteTitle}
+                      </Caps>
+                    </NavLink>
+                  </StyledButton>
 
                   <Box mx="auto" />
                   <NavLinkWrapper

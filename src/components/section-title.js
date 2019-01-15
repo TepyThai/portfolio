@@ -11,7 +11,7 @@ const Title = styled(Caps)`
   /* text-align: left; */
   margin: 2rem 2rem;
   padding: 0.5rem 2rem;
-  text-shadow: 1px -2px ${p => p.theme.colors.red};
+  text-shadow: 1px -2px ${p => p.theme.colors.darkYellow};
   font-weight: bold;
   :after {
     content: '';
@@ -20,10 +20,13 @@ const Title = styled(Caps)`
     left: 25%;
     height: 50%;
     width: 50%;
-    background-color: ${p => p.theme.colors.yellow};
+    background: ${p =>
+      `linear-gradient(to right, ${p.theme.colors.darkYellow}, ${
+        p.theme.colors.darkRed
+      })`};
     transform: skewX(-30deg);
     z-index: -1;
-    box-shadow: 4px -4px ${p => p.theme.colors.red};
+    /* box-shadow: 4px -4px ${p => p.theme.colors.teal}; */
     animation: move-title .5s 1 0s ease-in-out;
     /* text-align: center; */
   }
@@ -42,10 +45,6 @@ const Title = styled(Caps)`
         }
   }
 
-
-    
-
-  /* text-shadow: 4px 4px rgba(0, 0, 0, 0.25); */
 `
 
 const charPoses = {

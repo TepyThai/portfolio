@@ -23,7 +23,7 @@ class ButtonScroll extends React.PureComponent {
   }
   render() {
     return (
-      <StyledButton {...this.props} onClick={this.scrollTo}>
+      <StyledButton as="a" {...this.props} onClick={this.scrollTo}>
         {this.props.children}
       </StyledButton>
     )
