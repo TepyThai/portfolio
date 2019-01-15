@@ -11,4 +11,5 @@ export const JavaLogo =
 export const TheMovieDBLogo =
   'https://www.themoviedb.org/assets/1/v4/logos/312x276-primary-green-74212f6247252a023be0f02a5a45794925c3689117da9d20ffe47742a665c518.png'
 
-export const SquareLogo = 'http://oi64.tinypic.com/s5bhoj.jpg'
+export const SquareLogo =
+  'https://res.cloudinary.com/dzitawely/image/upload/v1547514566/portfolio/square-logo.png'
