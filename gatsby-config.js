@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `TepyThai's portfolio`,
     author: 'Tepy Thai',
-    description: 'Personal portfolio site - TepyThai',
+    description: 'Personal portfolio site - Coffee driven developer',
+    siteUrl: 'https://tx2.netlify.com',
     social: {
       twitter: `@tepythai`,
     },

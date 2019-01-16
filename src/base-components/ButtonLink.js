@@ -3,7 +3,6 @@ import { Button } from 'rebass'
 import NavLink from './NavLink'
 import React from 'react'
 import StyledButton from './StyledButton'
-import Caps from './Caps'
 
 export const ButtonLinkWrapper = styled(Button)`
   display: ${p => p.display || 'block'};

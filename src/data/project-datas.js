@@ -37,7 +37,7 @@ export const projectDatas = [
     projectName: 'PopularMovie',
     logoPaths: [JavaLogo, TheMovieDBLogo, SquareLogo, SquareLogo],
     imagePathName: 'projectCardBg2',
-    detailLink: '/blog/udacity-popular-movie-project-android',
+    detailLink: '/blog/how-i-build-udacity-popular-movie-project-android/',
     descriptions: [
       {
         logoSrc: JavaLogo,

@@ -1,7 +1,7 @@
 ---
-path: '/blog/how-i-build-portfolio-site-with-gatsby'
-date: '2019-01-11T1:51PM'
+date: '2019-01-11'
 title: 'How I build my portfolio site with gatsby 🔥'
+description: 'How you can make your portfolio blazing fast 🔥(literally)'
 ---
 
 ### Blog post coming soon:
