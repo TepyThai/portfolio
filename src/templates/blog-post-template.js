@@ -16,7 +16,6 @@ const Template = ({ data }) => {
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <SEO
-          lang={'en-US'}
           title={post.frontmatter.title}
           description={post.frontmatter.description}
           slug={post.fields.slug}
