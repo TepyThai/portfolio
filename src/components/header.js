@@ -136,7 +136,7 @@ class Header extends React.Component {
                         upperCase
                         fontWeight="bold"
                         fontSize={3}
-                        inline
+                        style={{ display: 'inline' }}
                         p={0}
                       >
                         {this.props.siteTitle}

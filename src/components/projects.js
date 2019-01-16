@@ -47,6 +47,7 @@ class Projects extends React.Component {
                     imageData={
                       data[projectData.imagePathName].childImageSharp.fluid
                     }
+                    bgImageAlt={projectData.imagePathName}
                   />
                 ))}
               </GridContainer>

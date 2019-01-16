@@ -17,6 +17,7 @@ const ProjectCard = ({
   children,
   imageData,
   detailLink,
+  bgImageAlt,
   ...other
 }) => (
   <BaseCard maxWidth="460px" variant={variant} {...other} asBackground>
@@ -26,19 +27,27 @@ const ProjectCard = ({
       <SmCaps>Stack: </SmCaps>
       <Box mx="auto" my={0} />
       {logoPaths.map((logo, index) => (
-        <ImageCenter src={logo} key={descriptions[index].text} />
+        <ImageCenter
+          src={logo}
+          key={descriptions[index].text}
+          alt={String(logo)}
+        />
       ))}
     </Flex>
     <Divider />
     {descriptions.map(description => (
       <SmCaps inline key={description.text}>
-        <ImageCenter src={description.logoSrc} />
+        <ImageCenter
+          src={description.logoSrc}
+          alt={String(description.logoSrc)}
+        />
         {description.text}
       </SmCaps>
     ))}
     <ButtonLink to={detailLink}>Read details</ButtonLink>
     <Img
       fluid={imageData}
+      alt={bgImageAlt}
       style={{
         width: '100%',
         height: '100%',
