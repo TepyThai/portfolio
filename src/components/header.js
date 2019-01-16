@@ -126,7 +126,15 @@ class Header extends React.Component {
       <StaticQuery
         query={menuQuery}
         render={data => (
-          <React.Fragment>
+          <header
+            style={{
+              position: 'sticky',
+              top: 0,
+              left: 0,
+              zIndex: 9999,
+              margin: 0,
+            }}
+          >
             <Toolbar boxShadow py={1} m={0}>
               <Container width={[1]} px={2}>
                 <Toolbar width={[1]} className="asSubToolbar">
@@ -231,7 +239,7 @@ class Header extends React.Component {
               <GlobalStyle menuOpen={isOpen} />
             </Toolbar>
             <Backdrop menuOpen={isOpen} onClick={this.closeMenu} />
-          </React.Fragment>
+          </header>
         )}
       />
     )
