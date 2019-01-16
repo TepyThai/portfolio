@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Intro from '../components/intro'
 import About from '../components/about'
@@ -12,12 +13,19 @@ const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <SEO />
+      <Helmet>
+        <header>
+          <a href="#main-content">To content</a>
+        </header>
+      </Helmet>
       <Header siteTitle="Tepy Thai" />
-      <Intro introTitle="Tepy" />
-      <Container>
-        <Projects />
-        <About />
-      </Container>
+      <main id="main-content">
+        <Intro introTitle="Tepy" />
+        <Container>
+          <Projects />
+          <About />
+        </Container>
+      </main>
     </React.Fragment>
   </ThemeProvider>
 )
