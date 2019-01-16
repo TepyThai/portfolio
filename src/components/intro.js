@@ -28,6 +28,7 @@ const Intro = ({ introTitle }) => (
         >
           <Img
             fluid={data.headerBgImage.childImageSharp.fluid}
+            alt="header background"
             style={{
               width: '100%',
               height: '98%',
@@ -83,8 +84,8 @@ const Intro = ({ introTitle }) => (
                     inline
                   >
                     Web Developer
-                    <ImageCenter src={ReactLogo} />
-                    <ImageCenter src={GraphqlLogo} />
+                    <ImageCenter src={ReactLogo} alt="react js logo" />
+                    <ImageCenter src={GraphqlLogo} alt="graphql logo" />
                   </SmCaps>
                   <SmCaps p="0" inline>
                     {`Build `}
@@ -122,6 +123,7 @@ const Intro = ({ introTitle }) => (
                 >
                   <Img
                     fluid={data.profileImage.childImageSharp.fluid}
+                    alt="profile image"
                     style={{
                       width: 180,
                       height: 180,
