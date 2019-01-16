@@ -3,6 +3,7 @@ import { Button } from 'rebass'
 import NavLink from './NavLink'
 import React from 'react'
 import StyledButton from './StyledButton'
+import Caps from './Caps'
 
 export const ButtonLinkWrapper = styled(Button)`
   display: ${p => p.display || 'block'};
@@ -44,7 +45,7 @@ export default ({ children, to, isfullwidth, isMailLink, href, ...props }) => {
   return (
     <ButtonLinkWrapper {...props}>
       <NavLink to={to} isfullwidth={isfullwidth || 'true'}>
-        <StyledButton as="text" style={{ padding: 0 }} insideWrapper>
+        <StyledButton as="div" style={{ padding: 0 }} insideWrapper>
           {children}
         </StyledButton>
       </NavLink>

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Fragment } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled, { createGlobalStyle } from 'styled-components'
@@ -126,15 +126,7 @@ class Header extends React.Component {
       <StaticQuery
         query={menuQuery}
         render={data => (
-          <header
-            style={{
-              position: 'sticky',
-              top: 0,
-              left: 0,
-              zIndex: 9999,
-              margin: 0,
-            }}
-          >
+          <Fragment>
             <Toolbar boxShadow py={1} m={0}>
               <Container width={[1]} px={2}>
                 <Toolbar width={[1]} className="asSubToolbar">
@@ -205,7 +197,7 @@ class Header extends React.Component {
                         block={true}
                         scrollToName="scroll-to-projects"
                         closeMenu={this.closeMenu}
-                        isfullwidth
+                        // isfullwidth
                       >
                         Projects
                       </ButtonScroll>
@@ -239,7 +231,7 @@ class Header extends React.Component {
               <GlobalStyle menuOpen={isOpen} />
             </Toolbar>
             <Backdrop menuOpen={isOpen} onClick={this.closeMenu} />
-          </header>
+          </Fragment>
         )}
       />
     )

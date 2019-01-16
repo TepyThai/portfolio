@@ -11,7 +11,9 @@ import theme from '../utils/theme'
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
-      <Helmet title={`Tepy Thai`} />
+      <Helmet title={`Tepy Thai`}>
+        <html lang="en-US" />
+      </Helmet>
       <Header siteTitle="Tepy Thai" />
       <Intro introTitle="Tepy" />
       <Container>
