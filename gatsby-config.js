@@ -77,10 +77,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        allPageHeaders: [
-          'Link: </icons/icon-48x48.png>; rel=preload; as=image',
-          'Link: </manifest.webmanifest>; rel=preload; as=script',
-        ],
+        allPageHeaders: [],
       },
     },
   ],
