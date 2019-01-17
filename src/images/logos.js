@@ -1,10 +1,10 @@
 export const ReactLogo =
   'https://res.cloudinary.com/dzitawely/image/upload/v1547686725/ueit0jrnhigbipssbpco.svg'
 export const GraphqlLogo =
-  'https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg'
+  'https://res.cloudinary.com/dzitawely/image/upload/v1547691638/portfolio/GraphQL_Logo.svg'
 export const GatsbyLogo = 'https://www.gatsbyjs.org/monogram.svg'
 export const RebassLogo =
-  'https://camo.githubusercontent.com/4f6ca9438a3e45f9b409158503f3deebc86a793d/68747470733a2f2f7265626173736a732e6f72672f6c6f676f2e737667'
+  'https://res.cloudinary.com/dzitawely/image/upload/v1547691864/portfolio/68747470733a2f2f7265626173736a732e6f72672f6c6f676f2e737667.svg'
 export const JavaLogo =
   'https://res.cloudinary.com/dzitawely/image/upload/c_scale,w_16/v1547686667/java-file-format-509610.png'
 
