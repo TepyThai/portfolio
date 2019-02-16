@@ -7,7 +7,8 @@ class ButtonScroll extends React.PureComponent {
     Events.scrollEvent.register('begin')
     Events.scrollEvent.register('end')
   }
-  scrollTo = () => {
+  scrollTo = e => {
+    e.preventDefault()
     scroller.scrollTo(this.props.scrollToName, {
       duration: 800,
       delay: 0,
