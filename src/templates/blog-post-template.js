@@ -28,7 +28,12 @@ const Template = ({ data }) => {
           <SmCaps inline>{post.frontmatter.date}</SmCaps>
           {`||`}
           <SmCaps inline>Time to read: {post.timeToRead} min</SmCaps>
-          <SmCaps dangerouslySetInnerHTML={{ __html: post.html }} />
+          <SmCaps
+            fontFamily="palatino"
+            fontSize={3}
+            style={{ lineHeight: '24px', color: '#0a0a0a' }}
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
         </Container>
       </React.Fragment>
     </ThemeProvider>
