@@ -12,7 +12,8 @@ const NavLink = styled(Link)`
   margin: ${p => (p.navtype ? '0 15px' : '0')};
   position: relative;
   letter-spacing: 0.1rem;
-  color: ${props => props.theme.colors.yellow};
+  color: ${props =>
+    props.noColor ? props.theme.colors.white : props.theme.colors.yellow};
 
   width: ${p => (p.isfullwidth ? '100%' : 'auto')};
   font-family: ${p => p.theme.fonts.mono};

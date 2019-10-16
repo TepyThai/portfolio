@@ -13,6 +13,7 @@ import ButtonScroll from '../base-components/ButtonScroll'
 import NavLink from '../base-components/NavLink'
 import SocialLinks from './social-links'
 import StyledButton from '../base-components/StyledButton'
+import ButtonLink from '../base-components/ButtonLink'
 
 const GlobalStyle = createGlobalStyle`
   root{
@@ -162,7 +163,18 @@ class Header extends React.Component {
                       </>
                     )}
                     {isBlog && <SocialLinks />}
-                    <ButtonScroll
+                    <NavLink
+                      as="a"
+                      href="mailto:thaitepy@gmail.com"
+                      href="mailto:thaitepy@gmail.com"
+                      rel="noopener noreferrer"
+                      className="last"
+                      noColor
+                      target="_blank"
+                    >
+                      Contact Me
+                    </NavLink>
+                    {/* <ButtonScroll
                       navtype
                       as="a"
                       href="mailto:thaitepy@gmail.com"
@@ -171,7 +183,7 @@ class Header extends React.Component {
                       target="_blank"
                     >
                       Contact Me
-                    </ButtonScroll>
+                    </ButtonScroll> */}
                   </NavLinkWrapper>
                   <MenuWrapper onClick={this.toggle}>
                     {isOpen ? (
@@ -197,9 +209,8 @@ class Header extends React.Component {
                         block={true}
                         scrollToName="scroll-to-projects"
                         closeMenu={this.closeMenu}
-                        // isfullwidth
                       >
-                        Projects
+                        // isfullwidth Projects
                       </ButtonScroll>
 
                       <ButtonScroll
