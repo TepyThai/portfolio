@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import { ButtonLinkWrapper } from '../base-components/ButtonLink'
 import Img from 'gatsby-image'
-import { Flex } from 'rebass'
+import { Flex } from 'rebass/styled-components'
 import theme from '../utils/theme'
 
 const introImageQuery = graphql`

@@ -1,4 +1,4 @@
-import { Box } from 'rebass'
+import { Box } from 'rebass/styled-components'
 import React from 'react'
 const Fixed = props => (
   <Box

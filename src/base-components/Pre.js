@@ -1,4 +1,4 @@
-import { Text } from 'rebass'
+import { Text } from 'rebass/styled-components'
 import React from 'react'
 const Pre = props => (
   <Text

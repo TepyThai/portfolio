@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, Flex, Button } from 'rebass'
+import { Card, Flex, Button } from 'rebass/styled-components'
 import Caps from '../base-components/Caps'
 import Divider from '../base-components/Divider'
 const FloatingNav = props => (

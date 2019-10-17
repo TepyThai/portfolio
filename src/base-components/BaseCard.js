@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Card } from 'rebass'
+import { Card } from 'rebass/styled-components'
 import PropTypes from 'prop-types'
 
 const BaseCard = styled(Card)`

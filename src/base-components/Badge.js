@@ -1,4 +1,4 @@
-import { Card, Box } from 'rebass'
+import { Card, Box } from 'rebass/styled-components'
 import React from 'react'
 import styled from 'styled-components'
 

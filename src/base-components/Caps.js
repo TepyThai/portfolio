@@ -1,4 +1,4 @@
-import { Text } from 'rebass'
+import { Text } from 'rebass/styled-components'
 import styled from 'styled-components'
 
 const Caps = styled(Text)`
@@ -7,9 +7,7 @@ const Caps = styled(Text)`
   z-index: inherit;
   background: ${p =>
     p.importantText
-      ? `linear-gradient(to right,${p.theme.colors.yellow},${
-          p.theme.colors.red
-        })`
+      ? `linear-gradient(to right,${p.theme.colors.yellow},${p.theme.colors.red})`
       : 'none'};
   background-clip: ${p => (p.importantText ? 'text' : '')};
   /* box-decoration-break: ${p => (p.importantText ? 'clone' : '')}; */

@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled, { createGlobalStyle } from 'styled-components'
-import { Box, Flex, Button } from 'rebass'
+import { Box, Flex, Button } from 'rebass/styled-components'
 import posed from 'react-pose'
 
 import Toolbar from '../base-components/Toolbar'

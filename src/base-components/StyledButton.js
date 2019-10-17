@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Button } from 'rebass'
+import { Button } from 'rebass/styled-components'
 import NavLink from './NavLink'
 import { ButtonLinkWrapper } from './ButtonLink'
 const StyledButton = styled(Button)`
@@ -36,9 +36,7 @@ const StyledButton = styled(Button)`
   ${NavLink}:hover & {
     color: ${p => p.theme.colors.red};
     background: ${p =>
-      `linear-gradient(to right, ${p.theme.colors.yellow}, ${
-        p.theme.colors.red
-      })`};
+      `linear-gradient(to right, ${p.theme.colors.yellow}, ${p.theme.colors.red})`};
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -52,9 +50,7 @@ const StyledButton = styled(Button)`
   :active {
     color: ${p => p.theme.colors.yellow};
     background: ${p =>
-      `linear-gradient(to right, ${p.theme.colors.yellow}, ${
-        p.theme.colors.red
-      })`};
+      `linear-gradient(to right, ${p.theme.colors.yellow}, ${p.theme.colors.red})`};
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;

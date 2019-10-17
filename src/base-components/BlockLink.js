@@ -1,4 +1,4 @@
-import { Link } from 'rebass'
+import { Link } from 'rebass/styled-components'
 import React from 'react'
 
 const BlockLink = props => (

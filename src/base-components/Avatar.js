@@ -1,4 +1,4 @@
-import { Image } from 'rebass'
+import { Image } from 'rebass/styled-components'
 import React from 'react'
 
 const Avatar = props => (
